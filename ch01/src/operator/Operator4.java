@@ -23,7 +23,7 @@ public class Operator4 {
 		char ch;
 		ch = (fatherAge > motherAge)? 'T': 'F';
 		System.out.println(ch);   // F
-	
+		
 
 	}
 
