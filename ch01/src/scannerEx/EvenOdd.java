@@ -13,7 +13,16 @@ public class EvenOdd {
 		int num = sc.nextInt();
 		
 		
-		String result = (num % 2 == 1)? "홀수": "짝수";
+//		String result = (num % 2 == 1)? "홀수": "짝수";
+		
+		String result;
+		
+		if(num % 2 == 1) {
+			result = "홀수";
+		}
+		else {
+			result = "짝수";
+		}
 		
 		System.out.println(result);
 		
