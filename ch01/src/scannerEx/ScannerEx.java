@@ -1,4 +1,4 @@
-package constant;
+package scannerEx;
 
 import java.util.Scanner;   // Scanner 클래스 import!!
 
