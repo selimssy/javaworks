@@ -58,5 +58,6 @@ final method() 이렇게 메소드 앞에 오면: 메소드 재정의 불가
 https://wookoa.tistory.com/80             static 관련 오류 해결
 https://kingofbackend.tistory.com/131    static 의미
 https://passiflore.tistory.com/entry/Casting-Instanceof-%EA%B0%95%EC%A0%9C%ED%83%80%EC%9E%85%EB%B3%80%ED%99%98%EA%B3%BC-%EA%B0%9D%EC%B2%B4-%ED%83%80%EC%9E%85-%ED%99%95%EC%9E%85
+https://velog.io/@duswls3913/JAVA-%EC%83%81%EC%86%8D%EC%97%90%EC%84%9C%EC%9D%98-%EC%83%9D%EC%84%B1%EC%9E%90
  * */
 }
