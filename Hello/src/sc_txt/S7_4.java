@@ -54,6 +54,9 @@ final method() 이렇게 메소드 앞에 오면: 메소드 재정의 불가
 
 
 
+추상클래스
+
+
 
 https://wookoa.tistory.com/80             static 관련 오류 해결
 https://kingofbackend.tistory.com/131    static 의미
