@@ -39,6 +39,24 @@ P330_Child
 P330_TEST
 p/335 해보쟈ㅠ
 
+abstractex.phone패키지
+abstractex.animal패키지
+exer snow패키지
+Service패키지......?
+interfaceex패키지(인터페이스) - 이중에서 remotecontrol 모르겟다,,
+tire 패키지
+template_method 다시ㅠ
+gamelevel 패키지
+
+
+
+
+
+
+
+
+
+
 
 final: 변수 앞에 오면 상수
 final class 이렇게 클래스 앞에 오면:  상속 불가
@@ -56,6 +74,27 @@ final method() 이렇게 메소드 앞에 오면: 메소드 재정의 불가
 
 추상클래스
 
+
+
+}else {
+	System.out.println("지원되지 않는 기능입니다.");
+	return;   // 강제 종료
+}
+
+return 강제종료 기억하자!
+
+
+템플릿 메서드
+
+
+
+
+
+인터페이스로 구현 객체를 사용하는 방법
+1.필드
+2.생성자의 매개변수
+3.매서드의 지역변수
+4.메서드의 매개변수
 
 
 https://wookoa.tistory.com/80             static 관련 오류 해결
