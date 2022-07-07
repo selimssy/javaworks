@@ -10,7 +10,7 @@ public class ToStringExample {
 		System.out.println(name);   // 오상식 (객체주소가 아니라 값이 나온다)
 		
 		//toString() : 객체의 정보를 문자열로 출력하는 함수 / Object 클래스꺼다
-		System.out.println(name.toString());
+		System.out.println(name.toString());  //오상식 
 		
 		
 		
@@ -18,6 +18,13 @@ public class ToStringExample {
 		System.out.println(book);  // object.Book@167fdd33 이건 주소가 나온다
 		System.out.println(book.toString());   // object.Book@167fdd33
 		
+		
+		
+		
+		// << Book클래스에서 toString() @Override 해준 후>> (Book클래스에서 toString() 재정의)
+		
+		System.out.println(book);  // object.Book@167fdd33 이건 주소가 나온다
+		System.out.println(book.toString());   // object.Book@167fdd33
 		
 	}
 

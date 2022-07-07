@@ -22,6 +22,13 @@ fruit 패키지★
 casting패키지 : (강제형변환)
 
 
+shelf 패키지
+innerinterface.window 패키지 - 내부 인터페이스해야ㅠㅠ
+ch07 object 패키지  .....???
+HashMap..............?
+
+
+
 
 <exer패키지>
 A
@@ -95,6 +102,82 @@ return 강제종료 기억하자!
 2.생성자의 매개변수
 3.매서드의 지역변수
 4.메서드의 매개변수
+
+
+
+
+
+system 12345
+
+확장자  .sql
+
+
+
+column1 CHAR(10),       -- 고정 길이
+column2 VARCHAR2(10),   -- 가변 길이
+
+
+
+-- 오라클에서는 문자 무조건 홀따옴표!
+
+
+
+--현재 날짜: SYSDATE, 시분초까지: SYSTIMESTAMP
+
+
+-- 테이블의 구조
+DESC member;
+
+
+-- INSERT INTO ex3 VALUES('Hello', '');   -- ORA-01400: NULL을 ("SYSTEM"."EX3"."COL_NOT_NULL") 안에 삽입할 수 없습니다
+(즉 not null 조건에 위배)
+즉, ' ' 만 넣어도 null에 해당한다!!
+
+
+
+
+
+
+DDL - CREATE ALTER DROP
+
+DML - SELECT INSERT UPDATE DELETE 
+
+
+
+
+
+
+UPDATE member
+SET regDate = '22/05/15', salary = 1500000
+WHERE userId = 'sky2022';
+--이렇게 콤마로 여러 개 한꺼번에 수정할 수도 있다!!★
+
+
+
+
+
+
+DELETE member;
+
+ROLLBACK;
+--commit 잘 해주면 실수로 delete해도 롤백하면 복구된다!★
+
+
+
+
+
+
+
+
+-- 테이블 복사
+-- CREATE TABLE  새테이블명 AS
+SELECT * FROM 원본테이블
+
+
+
+
+ALTER TABLE USER MODIFY(member NUMBER(3));  
+이런식으로 수정
 
 
 https://wookoa.tistory.com/80             static 관련 오류 해결
