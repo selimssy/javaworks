@@ -180,6 +180,37 @@ ALTER TABLE USER MODIFY(member NUMBER(3));
 이런식으로 수정
 
 
+
+
+
+-- 총 몇 권 주문이 들어왔는지 출력
+SELECT COUNT(*) AS 총판매건수
+FROM orders;
+
+
+
+
+
+
+
+
+VO 와 DAO
+DAO: DB작업 수행하는 코드
+
+
+
+src에서 오른쪽클릭 새폴더!
+ojdbc11.jar 복사해와서 여기 붙여넌다
+
+
+
+
+
+<오라클 연동>
+https://sas-study.tistory.com/117
+
+
+
 https://wookoa.tistory.com/80             static 관련 오류 해결
 https://kingofbackend.tistory.com/131    static 의미
 https://passiflore.tistory.com/entry/Casting-Instanceof-%EA%B0%95%EC%A0%9C%ED%83%80%EC%9E%85%EB%B3%80%ED%99%98%EA%B3%BC-%EA%B0%9D%EC%B2%B4-%ED%83%80%EC%9E%85-%ED%99%95%EC%9E%85
