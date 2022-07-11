@@ -23,12 +23,12 @@ public class PersonDAO {
 			conn = JDBCUtil.getConnection();
 			String sql = "INSERT INTO person(userid, userpw, name, age) VALUES (?, ?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, person.getUserId());
-			pstmt.setString(2, person.getUserPw());
+			pstmt.setString(1, person.getUserId());   // 입력된 아이디 가져와서 sql에 세팅
+			pstmt.setString(2, person.getUserPw());   // 문자는 setString, 숫자는 setInt, 날짜는 setDate
 			pstmt.setString(3, person.getName());
 			pstmt.setInt(4, person.getAge());
 			pstmt.executeUpdate();   //db에 저장
-		}catch(Exception e) {
+		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
 			JDBCUtil.close(conn, pstmt);
