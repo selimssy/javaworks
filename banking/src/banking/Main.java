@@ -101,6 +101,15 @@ public class Main {
 		System.out.print("계좌 번호: ");
 		String ano = sc.next();
 		
+		if(findAccount(ano) == null) {
+			System.out.println("계좌가 없습니다. 다시 입력하세요.");
+			System.out.println("계좌번호: ");
+			ano = sc.next();
+		}
+		// 또 잘못입력하면 오류난다...............
+		
+		
+		
 		Account account = findAccount(ano);	  // 검색한 계좌의 account 반환(객체를 반환)
 		
 		System.out.print("입금액: ");
@@ -109,6 +118,32 @@ public class Main {
 		account.setBalance(account.getBalance() + money);
 		System.out.println("결과: 입금을 성공하였습니다. 잔액: " + account.getBalance() + "원");
 	}
+	
+	
+	
+	
+	/*private static void deposit() {
+		try {
+		System.out.println("----------------------------------------");
+		System.out.println("3.예금");
+		System.out.println("----------------------------------------");
+		
+		// 입력한 계
+		System.out.print("계좌 번호: ");
+		String ano = sc.next();
+		
+		Account account = findAccount(ano);	  // 검색한 계좌의 account 반환(객체를 반환)
+		
+		System.out.print("입금액: ");
+		int money = sc.nextInt();
+		
+		account.setBalance(account.getBalance() + money);
+		System.out.println("결과: 입금을 성공하였습니다. 잔액: " + account.getBalance() + "원");
+		}catch(NullPointerException e){
+			System.out.println("일치하는 계좌가 없습니다.");
+		}
+		
+		}*/
 
 
 
@@ -136,11 +171,13 @@ public class Main {
 	private static Account findAccount(String ano) {
 		Account account = null;
 		for(int i=0; i<accountArray.length; i++) {
-			String dbAno = accountArray[i].getAno();   // 저장된 계좌를 가져와서
-			if(dbAno.equals(ano)) {
-				account = accountArray[i];
-				break;
-			}
+			if(accountArray[i] != null) {
+				String dbAno = accountArray[i].getAno();   // 저장된 계좌를 가져와서
+				if(dbAno.equals(ano)) {
+					account = accountArray[i];
+					break;
+				}
+			}		
 		}
 		return account;
 	}
