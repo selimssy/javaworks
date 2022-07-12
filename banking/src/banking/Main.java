@@ -50,6 +50,7 @@ public class Main {
 		
 		System.out.print("계좌 번호: ");
 		String ano = sc.next();
+		// 없는 계좌 입력하면 여기서 "계좌가 없습니다. 다시 입력하세요." 나오도록
 		
 		System.out.print("계좌주: ");
 		String owner = sc.next();
