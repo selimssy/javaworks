@@ -48,25 +48,41 @@ public class Main2 {
 		System.out.println("1.계좌생성");
 		System.out.println("----------------------------------------");
 		
-		System.out.print("계좌 번호: ");
-		String ano = sc.next();
-		// 없는 계좌 입력하면 여기서 "계좌가 없습니다. 다시 입력하세요." 나오도록
+		while(true) {
+			System.out.print("계좌 번호: ");
+			String ano = sc.next();
+			if(findAccount(ano) != null) {
+				System.out.println("이미 존재하는 계좌입니다. 다른 번호를 입력하세요.");
+			}else {
+					
+			
+				System.out.print("계좌주: ");
+				String owner = sc.next();
 				
-		
-		System.out.print("계좌주: ");
-		String owner = sc.next();
-		
-		System.out.print("초기입금액: ");
-		int balance = sc.nextInt();
-		
-		// 계좌 객체 생성
-		Account newAccount = new Account(ano, owner, balance);
-		
-		for(int i=0; i<accountArray.length;i++) {
-			if(accountArray[i] == null) {     // 배열의 공간이 null인 경우 계좌를 배열에 저장
-				accountArray[i] = newAccount;
-				System.out.println("결과: 계좌가 생성되었습니다.(" + i + "번)");
-				break;   // 계좌 생성하고 바로 for문 빠져나와야!
+				while(true) {
+					System.out.print("초기입금액: ");
+					int balance = sc.nextInt();
+					if(balance < 500) {
+						System.out.println("초기입금액은 500원 이상부터 가능합니다.");
+					}else {
+						
+					
+				
+				
+						// 계좌 객체 생성
+						Account newAccount = new Account(ano, owner, balance);
+						
+						for(int i=0; i<accountArray.length;i++) {
+							if(accountArray[i] == null) {     // 배열의 공간이 null인 경우 계좌를 배열에 저장
+								accountArray[i] = newAccount;
+								System.out.println("결과: 계좌가 생성되었습니다.(" + i + "번)");
+								break;   // 계좌 생성하고 바로 for문 빠져나와야!
+							}
+						}
+						break;
+					}
+				}
+				break;
 			}
 		}
 	}
@@ -99,66 +115,38 @@ public class Main2 {
 		System.out.println("----------------------------------------");
 		
 		// 입력한 계
-		System.out.print("계좌 번호: ");
-		String ano = sc.next();
-		
-		boolean run = true;
-		while(run) {
-			if(findAccount(ano) == null) {
-				System.out.println("계좌가 없습니다. 다시 입력하세요.");
-				System.out.print("계좌번호: ");
-				ano = sc.next();
-			}else {
-				run = false;
-			}
-		}
-		
-		// t꺼가 더 깔끔하다...		
-		
-		Account account = findAccount(ano);	  // 검색한 계좌의 account 반환(객체를 반환)
-		
-		System.out.print("입금액: ");	
-		int money = sc.nextInt();
 		
 		while(true) {
-			if(money < 0) {
-				System.out.println("음수는 입력할 수 없습니다. 다시 입력해주세요.");
-				System.out.print("입금액: ");	
-				money = sc.nextInt();
+			System.out.print("계좌 번호: ");
+			String ano = sc.next();
+			
+			Account account = findAccount(ano);	  // 검색한 계좌의 account 반환(객체를 반환)
+			if(account == null) {
+				System.out.println("잘못된 계좌입니다.");
 			}else {
+			
+				while(true) {
+					
+					System.out.print("입금액: ");	
+					int money = sc.nextInt();
+					
+					if(money < 0) {
+						System.out.println("음수는 입력할 수 없습니다. 다시 입력하세요.");
+					}else {
+					account.setBalance(account.getBalance() + money);
+					System.out.println("결과: 입금을 성공하였습니다. 잔액: " + account.getBalance() + "원");
+					break;
+					}
+					
+				}
 				break;
 			}
 		}
-		
-		account.setBalance(account.getBalance() + money);
-		System.out.println("결과: 입금을 성공하였습니다. 잔액: " + account.getBalance() + "원");
 	}
 	
 	
 	
 	
-	/*private static void deposit() {
-		try {
-		System.out.println("----------------------------------------");
-		System.out.println("3.예금");
-		System.out.println("----------------------------------------");
-		
-		// 입력한 계
-		System.out.print("계좌 번호: ");
-		String ano = sc.next();
-		
-		Account account = findAccount(ano);	  // 검색한 계좌의 account 반환(객체를 반환)
-		
-		System.out.print("입금액: ");
-		int money = sc.nextInt();
-		
-		account.setBalance(account.getBalance() + money);
-		System.out.println("결과: 입금을 성공하였습니다. 잔액: " + account.getBalance() + "원");
-		}catch(NullPointerException e){
-			System.out.println("일치하는 계좌가 없습니다.");
-		}
-		
-		}*/
 
 
 
@@ -168,41 +156,32 @@ public class Main2 {
 		System.out.println("----------------------------------------");
 		
 		// 입력한 계
-		System.out.print("계좌 번호: ");
-		String ano = sc.next();
-		
-		boolean run = true;
-		while(run) {
-			if(findAccount(ano) == null) {
-				System.out.println("계좌가 없습니다. 다시 입력하세요.");
-				System.out.print("계좌번호: ");
-				ano = sc.next();
-			}else {
-				run = false;
-			}
-		}
-		
-		Account account = findAccount(ano);	
-		
-		System.out.print("출금액: ");
-		int money = sc.nextInt();
-		
 		while(true) {
-			if(money < 0) {
-				System.out.println("음수는 입력할 수 없습니다. 다시 입력해주세요.");
-				System.out.print("출금액: ");	
-				money = sc.nextInt();
-			}else if(account.getBalance() < money) {
-				System.out.println("잔액이 부족합니다. 다시 입력해주세요.");
-				System.out.print("출금액: ");	
-				money = sc.nextInt();
+			System.out.print("계좌 번호: ");
+			String ano = sc.next();
+			
+			Account account = findAccount(ano);	
+			if(account == null) {
+				System.out.println("잘못된 계좌입니다.");
 			}else {
+			
+				while(true) {
+					System.out.print("출금액: ");
+					int money = sc.nextInt();
+					
+					if(money < 0) {
+						System.out.println("음수는 입력할 수 없습니다.");
+					}else if(money > account.getBalance()){
+						System.out.println("잔액이 부족합니다.");
+					}else {
+					account.setBalance(account.getBalance() - money);
+					System.out.println("결과: 출금을 성공하였습니다. 잔액: " + account.getBalance() + "원");	
+					break;
+					}
+				}
 				break;
 			}
 		}
-		
-		account.setBalance(account.getBalance() - money);
-		System.out.println("결과: 출금을 성공하였습니다. 잔액: " + account.getBalance() + "원");		
 	}
 	
 	
